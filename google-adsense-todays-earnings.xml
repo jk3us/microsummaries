@@ -2,7 +2,7 @@
 <?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
 <generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="Google Adsense Today's Earnings" sourceURI="http://dev.jk3.us/microsummaries/generators/google-finance-current-value.xml">
   <pages>
-    <include>https://google.com/adsense/report/overview</include>
+    <include>https://www.google.com/adsense/report/overview</include>
     <include>https://(www\.)?google\.com/adsense/report/overview</include>
   </pages>
   <template>
