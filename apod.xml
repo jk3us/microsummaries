@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="Astronomy Picture of the Day" sourceURI="http://dev.jk3.us/microsummaries/generators/apod.xml">
+  <pages>
+    <include>http://antwrp.gsfc.nasa.gov/apod/astropix.html</include>
+    <include>http://antwrp\.gsfc\.nasa\.gov/apod/astropix\.html</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+		<xsl:text>APOD - </xsl:text>
+        <xsl:value-of select="/html/body/center[2]/b[1]/text()"/>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>

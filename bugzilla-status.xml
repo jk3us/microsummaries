@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="Bugzilla Bug Status" sourceURI="http://dev.jk3.us/microsummaries/generators/bugzilla-status.xml">
+  <pages>
+    <include>https://bugzilla.mozilla.org/show_bug.cgi?id=341341</include>
+    <include>.*/show_bug.cgi\?id=.*</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+        <xsl:value-of select="normalize-space(//form[@name='changeform']/table[1]/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/a/text())"/>
+        <xsl:text>: </xsl:text>
+        <xsl:value-of select="normalize-space(//form[@name='changeform']/table[1]/tbody/tr[1]/td[1]/table/tbody/tr[4]/td[2]/text())"/>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="normalize-space(//form[@name='changeform']/table[1]/tbody/tr[1]/td[1]/table/tbody/tr[5]/td[2]/text())"/>
+        <xsl:text>- </xsl:text>
+        <xsl:value-of select="substring(normalize-space(//div[@id='header']/h3/text()),16)"/>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>

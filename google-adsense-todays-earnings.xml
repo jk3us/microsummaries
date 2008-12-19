@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="Google Adsense Today's Earnings" sourceURI="http://dev.jk3.us/microsummaries/generators/google-finance-current-value.xml">
+  <pages>
+    <include>https://google.com/adsense/report/overview</include>
+    <include>https://(www\.)?google\.com/adsense/report/overview</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+        <xsl:value-of select="//div[@id='content']/table[1]/tbody/tr/td[1]/h1/text()"/>
+        <xsl:value-of select="//div[@id='content']/table[1]/tbody/tr/td[1]/h1/span/text()"/>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>

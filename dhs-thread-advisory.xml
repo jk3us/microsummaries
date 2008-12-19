@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="DHS Threat Advisory" sourceURI="http://dev.jk3.us/microsummaries/generators/dhs-thread-advisory.xml">
+  <pages>
+    <include>http://www.dhs.gov/dhspublic/</include>
+    <include>http://(www\.)?dhs\.gov/.*</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+        <xsl:value-of select="normalize-space(string(//div[@id='threat']/a/img/@alt))"/>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>

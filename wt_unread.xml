@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="USNX Work Tracker - My Unread Posts" sourceURI="http://dev.jk3.us/microsummaries/generators/wt_unread.xml">
+  <pages>
+    <include>https://wt.d2hosting.net/start.php</include>
+    <include>https://wt\.d2hosting\.net/start\.php</include>
+    <include>http://wt\.usnx\.com/start\.php</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+        <xsl:value-of select="sum(/html/body/div[2]/div[@class='me']/div[@class='task']/div/div/span[@class='task_post_count']/span/span[@class='num_unread'])"/>
+		<xsl:text> Unread Messages </xsl:text>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>

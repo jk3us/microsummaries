@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="reddit.com First article" sourceURI="http://dev.jk3.us/microsummaries/generators/reddit-first-article.xml">
+  <pages>
+    <include>http://reddit.com/</include>
+    <include>http://(www\.)?reddit\.com/.*</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+		<xsl:text>reddit: </xsl:text>
+        <xsl:value-of select="normalize-space(//table[@id='siteTable']/tbody/tr[2]/td[3]/a/text())"/>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>

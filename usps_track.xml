@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/microsummaries/microsummary-generator.xsl" type="text/xsl"?>
+<generator xmlns="http://www.mozilla.org/microsummaries/0.1" name="USPS Package Tracking" sourceURI="http://dev.jk3.us/microsummaries/generators/usps_track.xml">
+  <pages>
+    <include>http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=</include>
+    <include>http://trkcnfrm1\.smi\.usps\.com/PTSInternetWeb/InterLabelInquiry\.do\?origTrackNum=.*</include>
+    <include>http://trkcnfrm1\.smi\.usps\.com/PTSInternetWeb/InterLabelInquiry\.do\?strOrigTrackNum=.*</include>
+  </pages>
+  <template>
+    <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:output method="text"/>
+      <xsl:template match="/">
+		<xsl:text>USPS - </xsl:text>
+        <xsl:value-of select="/html/body/table[4]/tbody/tr/td[2]/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td[2]/span[2]/text()"/>
+      </xsl:template>
+    </xsl:transform>
+  </template>
+</generator>
