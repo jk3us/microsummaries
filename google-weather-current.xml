@@ -9,9 +9,9 @@
     <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
       <xsl:output method="text"/>
       <xsl:template match="/">
-        <xsl:value-of select="/html/body/div[@id='res']/div/table[1]/tbody/tr[2]/td/div[1]/div[1]/b/text()"/>
+        <xsl:value-of select="/html/body/div[@id='cnt']/div[@id='res']/div[1]/table[1]/tbody/tr[2]/td/div[1]/div[1]/b/text()"/>
         <xsl:text> - </xsl:text>
-		<xsl:value-of select="/html/body/div[@id='res']/div/table[1]/tbody/tr[2]/td/div[1]/div[2]/b/text()"/>
+		<xsl:value-of select="/html/body/div[@id='cnt']/div[@id='res']/div/table[1]/tbody/tr[2]/td/div[1]/div[2]/b/text()"/>
       </xsl:template>
     </xsl:transform>
   </template>
